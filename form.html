@@ -27,7 +27,10 @@
     <form action="" class="form_2">
         <input type="text" id="1">
         <input type="number" id="2">
-        <button></button>
+        <div class="" id="eror"></div>
+        <button>
+            hhh
+        </button>
     </form>
     
     <script>
@@ -35,26 +38,29 @@
     let input=document.getElementById("1")
     let input_2=document.getElementById("2")
 
-    input.addEventListener("input",(event)=>{
-        let target=event.target
-        console.log(target.value)
-        console.log(event)
-        console.log("input")
+    // input.addEventListener("input",(event)=>{
+    //     let target=event.target
+    //     console.log(target.value)
+    //     console.log(event)
+    //     console.log("input")
         
-    })
-    input.addEventListener("change",(event)=>{
-        let target=event.target
-        console.log(target.value)
-        console.log(event)
-        console.log("change")
+    // })
+    // input.addEventListener("change",(event)=>{
+    //     let target=event.target
+    //     console.log(target.value)
+    //     console.log(event)
+    //     console.log("change")
         
-    })
+    // })
     input.addEventListener("focus",(event)=>{
         let target=event.target
         console.log(target.value)
         console.log(event)
         console.log("input")
-        
+        if(!input.value.includes('@')){
+            let eror=document.getElementById("eror")
+            eror.textContent='you need an @!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1'
+        }
     })
     input.addEventListener("blur",(event)=>{
         let target=event.target
@@ -63,7 +69,6 @@
         console.log("blur")
         
     })
-    
     </script>
 </body>
 </html>
