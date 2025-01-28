@@ -1,0 +1,18 @@
+.form{
+    background-color: coral;
+    display: flex;
+    flex-direction: column;
+    
+}
+.form_button{
+    color: rgb(0, 0, 0);
+}
+.form_input{
+    color: coral;
+}
+.form_input:invalid{
+    border: 1px solid red;
+}
+.form_input:valid{
+    border: 1px solid greenyellow;
+}
