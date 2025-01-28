@@ -52,22 +52,24 @@
     //     console.log("change")
         
     // })
-    input.addEventListener("focus",(event)=>{
-        let target=event.target
-        console.log(target.value)
-        console.log(event)
-        console.log("input")
-        if(!input.value.includes('@')){
-            let eror=document.getElementById("eror")
-            eror.textContent='you need an @!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1'
-        }
-    })
     input.addEventListener("blur",(event)=>{
         let target=event.target
         console.log(target.value)
         console.log(event)
         console.log("blur")
-        
+        if(!input.value.includes('@')){
+            let eror=document.getElementById("eror")
+            eror.textContent='you need an @!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+        }
+    })
+    input.addEventListener("focus",(event)=>{
+        let target=event.target
+        console.log(target.value)
+        console.log(event)
+        console.log("focus")
+        if(input.value.contains('@')){
+            eror.textContent('')
+        }
     })
     </script>
 </body>
