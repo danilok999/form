@@ -23,5 +23,47 @@
     <label for="choose">what types of cars do you prefer? mersedes or bmw?</label><input type="text" pattern="[Mm]ercedes|[Bb]mv"> 
     <button>send</button>       
     </form>
+
+    <form action="" class="form_2">
+        <input type="text" id="1">
+        <input type="number" id="2">
+        <button></button>
+    </form>
+    
+    <script>
+    let form=document.querySelector(".form_2")
+    let input=document.getElementById("1")
+    let input_2=document.getElementById("2")
+
+    input.addEventListener("input",(event)=>{
+        let target=event.target
+        console.log(target.value)
+        console.log(event)
+        console.log("input")
+        
+    })
+    input.addEventListener("change",(event)=>{
+        let target=event.target
+        console.log(target.value)
+        console.log(event)
+        console.log("change")
+        
+    })
+    input.addEventListener("focus",(event)=>{
+        let target=event.target
+        console.log(target.value)
+        console.log(event)
+        console.log("input")
+        
+    })
+    input.addEventListener("blur",(event)=>{
+        let target=event.target
+        console.log(target.value)
+        console.log(event)
+        console.log("blur")
+        
+    })
+    
+    </script>
 </body>
 </html>
