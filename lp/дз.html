@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/result.html" class="form">
+    <form action="../result.html" class="form" method="post">
         <input type="text" name="login" required class="form_input" minlength="5" maxlength="15">
         <input type="password" name="password" required class="form_input" minlength="6" maxlength="20">
         <input type="email" name="email" required class="form_input">
@@ -16,5 +16,38 @@
             result
         </button>
     </form>
+    <form>
+        <input type="password" id="password1" name="password1">
+        <input type="password" id="password2" name="password2">
+        <div class="" style="display: none;" id="eror_text">пароли не совпадают</div>
+        <button>
+            result
+        </button>
+    </form>
+    <form>
+        <input type="text" name="first_name" id="first_name">
+        <input type="text" name="second_name" id="last_name" readonly>
+    </form>
+    <script>
+        document.getElementById("password1").addEventListener("blur",()=>{
+        let password1=document.getElementById("password2").value
+        let password2=this.value
+        let eror =document.getElementById("eror_text")
+            if(password1 !== password2){
+                eror.style.display="flex"
+                console.log("ggggrfdecsrdeefde")
+            }
+            else{
+               eror.style.display="none"
+            }    
+        })
+    </script>
+    <script>
+       document.getElementById("first_name").addEventListener("input",()=>{
+        let first_name=this.value
+        document.getElementById("last_name").value = first_name
+        console.log(first_name)
+       })
+    </script>
 </body>
 </html>
