@@ -40,6 +40,7 @@
             <option value="17">17</option>
             <option value="18">18</option>
         </select>
+        <div class="can" style="display: none;"></div>
         <button>send</button>
     </form>
     <script>
@@ -62,6 +63,13 @@
         document.getElementById("last_name").value = first_name
         console.log(first_name)
        })
+    </script>
+    <script>
+     let select=document.getElementById("form_age_name")
+     select.addEventListener('change',()=>{
+        let div=document.querySelector('can')
+        let selectAge=this.value
+    })
     </script>
 </body>
 </html>
