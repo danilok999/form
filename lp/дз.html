@@ -41,6 +41,7 @@
             <option value="18">18</option>
         </select>
         <div class="can" style="display: none;"></div>
+        <div class="cant" style="display: none;"></div>
         <button>send</button>
     </form>
     <script>
@@ -67,8 +68,21 @@
     <script>
      let select=document.getElementById("form_age_name")
      select.addEventListener('change',()=>{
-        let div=document.querySelector('can')
-        let selectAge=this.value
+        let selectAge=parseInt(this.value)
+        let div=document.querySelector('.can')
+        let div2=document.querySelector(".cant")
+        
+    if(selectAge < 14){
+        div.style.display='flex'
+        div2.style.display='none'
+        div.textContent='нэ нельзя'
+    
+    }
+    else{
+        div.style.display='none'
+        div2.style.display='flex'
+        div2.textContent='можешь проходить'
+    }            
     })
     </script>
 </body>
