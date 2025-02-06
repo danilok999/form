@@ -44,6 +44,34 @@
         <div class="cant" style="display: none;"></div>
         <button>send</button>
     </form>
+    <form>
+        <label for="age">Выберите ваш возраст:</label>
+        <select id="age" name="age">
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+        </select>
+        <p id="age-message" style="color: green; display: none;"></p>
+        <p id="age-error" style="color: red; display: none;">Вы слишком молоды для участия в мероп
+      <script>
+      document.getElementById("age").addEventListener("change", function() {
+        const selectedAge = parseInt(this.value);
+        const ageMessage = document.getElementById("age-message");
+        const ageError = document.getElementById("age-error");
+      
+        if (selectedAge < 14) {
+          ageError.style.display = "inline";
+          ageMessage.style.display = "none";
+        } else {
+          ageError.style.display = "none";
+          ageMessage.style.display = "inline";
+          ageMessage.textContent = "Вы можете участвовать в мероприятии!";
+        }})
+        </script>
     <script>
         document.getElementById("password1").addEventListener("blur",()=>{
         let password1=document.getElementById("password2").value
@@ -68,15 +96,14 @@
     <script>
      let select=document.getElementById("form_age_name")
      select.addEventListener('change',()=>{
-        let selectAge=parseInt(this.value)
         let div=document.querySelector('.can')
         let div2=document.querySelector(".cant")
         
-    if(selectAge < 14){
+    if(select<14){
         div.style.display='flex'
         div2.style.display='none'
         div.textContent='нэ нельзя'
-    
+        console.log(selectAge)
     }
     else{
         div.style.display='none'

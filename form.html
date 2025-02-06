@@ -32,7 +32,17 @@
             hhh
         </button>
     </form>
-    
+    <form action="">
+        <textarea name="" id="textarea"></textarea>
+    <p id="paste-mesage"></p>
+    </form>
+    <script>
+        document.getElementById('textarea').addEventListener('paste',(event)=>{
+            let pasteText=event.clipboardData.getData("text")
+            let pasteMesage=document.getElementById('paste-mesage')
+            pasteMesage.textContent=`вы вставили ${pasteText.lenght}text`
+        })
+    </script>
     <script>
     let form=document.querySelector(".form_2")
     let input=document.getElementById("1")
